@@ -9,10 +9,24 @@ RUN \
         apt-get -y dist-upgrade && \
         apt-get install -y -q \
         mysecureshell \
-		git
-        openssh-server
-		apache2
+		git \
+        openssh-server \
+		apache2 \
+		sudo \
+		wget
 #       && docker-php-ext-install pdo_mysql gd opcache
+
+
+#PHP8 Installation
+apt update
+apt install -y lsb-release ca-certificates apt-transport-https software-properties-common gnupg2
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
+wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
+apt update
+apt install -y -q php8.0
+apt install -y -q php8.0-{mysql,cli,common,imap,ldap,xml,fpm,curl,mbstring,zip,gd}
+apt install -y -q libapache2-mod-php8.1
+apt install -y -q apache2-utils
 
 #Ajustando timezone
 RUN echo "America/Fortaleza" > /etc/timezone
