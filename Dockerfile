@@ -25,6 +25,9 @@ wget -qO - https://packages.sury.org/php/apt.gpg | sudo apt-key add -
 apt update
 apt install -y -q php8.0
 apt install -y -q php8.0-{mysql,cli,common,imap,ldap,xml,fpm,curl,mbstring,zip,gd}
+
+apt install -y -q php8.0-{bcmath,bz2,curl,dba,gd,imagick,intl,mbstring,mcrypt,memcache,mysql,pgsql,readline,soap,xml,xmlrpc,xmlwriter,opcache,zip}
+
 apt install -y -q libapache2-mod-php8.1
 apt install -y -q apache2-utils
 
