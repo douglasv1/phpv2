@@ -1,6 +1,6 @@
 FROM debian
 
-MAINTAINER "Dep de Redes" <redes@natal.rn.gov.br>
+MAINTAINER "Dep de Redes" <redes@>
 
 EXPOSE 22 80 443
 
