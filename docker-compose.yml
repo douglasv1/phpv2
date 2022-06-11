@@ -1,24 +1,11 @@
 version: '3'
 services:
-  php-teste:
-    image: image-php3:latest
-    #    environment:
-    #      - MYSQL_ROOT_PASSWORD=restore*2022
-    #      - MYSQL_DATABASE=development
-    #      - MYSQL_USER=devuser
-    #      - MYSQL_PASSWORD=secure
-    #      - LANG=C.UTF_8
-    #    volumes:
-    #- db-volume:/var/lib/mysql
-    #- "/var/lib/mysql:/home/dockerfiles/mysql_restore/dados/"
-    #       - "restore_20211210:/var/lib/mysql"
+  rumba-teste:
+    image: image-debian1:latest
     ports:
       - "1180:80"
       - "11443:443"
       - "1122:22"
     volumes:
       - ./app:/var/www/html
-        #      - ./config/php.ini-production:/usr/local/etc/php/php.ini-production
-
-#volumes:
-#    db-volume: /home/dockerfiles/mysql_restore/dados/
+      - ./logs:/var/logs/apache2
